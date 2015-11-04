@@ -1,11 +1,10 @@
 var Manager = (function(){
 
 	this.update = (function(){
-		//mouse.update();
+		hydrogen.update();
 	});
 
 	this.draw = (function(){
-		//mouse.draw();
 		hydrogen.draw();
 	});
 

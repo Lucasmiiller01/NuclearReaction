@@ -5,49 +5,51 @@ var keyboard = (function()
 		{
 			default: console.log("KeyCode: " + e.keyCode + " is pressed"); break;
 		}
-		
+
 		if(e.keyCode === 65 || e.keyCode === 37)
 		{
-			//andar para a esquerda.
+				hydrogen.isMoveLeft = true;
 		}
-		
+
 		if(e.keyCode === 39 || e.keyCode === 68)
 		{
-			//andar para a direita.
+				hydrogen.isMoveRight = true;
 		}
+
 		if(e.keyCode === 38 || e.keyCode === 87)
 		{
-			//andar para a cima.
+				hydrogen.isMoveDown = true;
 		}
+
 		if(e.keyCode === 40 || e.keyCode === 83)
 		{
-			//andar para a cima.
+				hydrogen.isMoveUp = true;
 		}
-		
+
 	});
-	
+
 	this.keyup = (function(e){
 		switch(e.keyCode)
 		{
 			default: console.log("KeyCode: " + e.keyCode + " is unpressed"); break;
 		}
-		
+
 		if(e.keyCode === 65 || e.keyCode === 37)
 		{
-			// parar de andar para a esquerda.
+				hydrogen.isMoveLeft = false;
 		}
-		
+
 		if(e.keyCode === 39 || e.keyCode === 68)
 		{
-			// parar de andar para a direita.
+				hydrogen.isMoveRight = false;
 		}
 		if(e.keyCode === 38 || e.keyCode === 87)
 		{
-			// parar de andar para a cima.
+				hydrogen.isMoveDown = false;
 		}
 		if(e.keyCode === 40 || e.keyCode === 83)
 		{
-			// parar de  andar para a cima.
+				hydrogen.isMoveUp = false;
 		}
 	});
 });
