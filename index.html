@@ -9,25 +9,23 @@
 <script src="js/lib/mouse.js"></script>
 <script src="js/lib/graphics.js"></script>
 <script src="js/lib/atom.js"></script>
+<script src="js/lib/sound.js"></script>
 <link rel="stylesheet" type="text/css" href="css/style.css"/>
 <script>
 
 	var draw = (function() {
 			manager.draw();
-	})
-
-
+	});
 
 	var update = (function(){
 			manager.update();
 	});
 
-	function loop()
-	{
+	var loop = (function() {
 			draw();
 			update();
 			setTimeout(loop, 30);
-	}
+	});
 
 	loop();
 
