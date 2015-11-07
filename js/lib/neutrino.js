@@ -1,24 +1,34 @@
-var Neutrino = (function() {
+var Neutrino = (function(direction) {
 
 	this.isOneNextInside = false;
-	this.x = Math.floor(Math.random() * (graphics.canvas.width));
-	this.y = Math.floor(Math.random() * (graphics.canvas.height));
+	this.direction = direction;
+	this.x = 0;
+	this.y = 0;
 
 	this.move = (function() {
-
-		this.x +=  Math.floor(Math.random() * 15);
-		this.y +=  Math.floor(Math.random() * 15);
 
 		if(((this.x > 0) && (this.x < graphics.canvas.width)) && ((this.y > 0) && (this.y < graphics.canvas.height)))
 		{ this.isOneNextInside = true; }
 
 		else
 		{ this.isOneNextInside = false; }
+
+			switch (this.direction)
+			{
+				case "Up-Down": this.y += 10; break;
+				case "Left-Right": this.x += 10; break;
+				case "Down-Up": this.y -= 10; break;
+				case "Right-Left": this.y -= 10; break;
+			}
 	});
+
+	this.restoreToInitPos()
+	{
+		this.x =
+	}
 
 	this.update = (function() {
 		this.move();
-		console.log(this.isOneNextInside)
 	});
 
 	this.draw = (function() {
@@ -26,4 +36,4 @@ var Neutrino = (function() {
 	});
 
 });
-var neutrino = new Neutrino();
+var neutrino = new Neutrino("Up-Down");

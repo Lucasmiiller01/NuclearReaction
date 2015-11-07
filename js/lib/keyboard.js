@@ -1,10 +1,6 @@
 var keyboard = (function()
 {
 	this.keydown = (function(e){
-		switch(e.keyCode)
-		{
-			default: console.log("KeyCode: " + e.keyCode + " is pressed"); break;
-		}
 
 		if(e.keyCode === 65 || e.keyCode === 37)
 		{
@@ -29,11 +25,7 @@ var keyboard = (function()
 	});
 
 	this.keyup = (function(e){
-		switch(e.keyCode)
-		{
-			default: console.log("KeyCode: " + e.keyCode + " is unpressed"); break;
-		}
-
+		
 		if(e.keyCode === 65 || e.keyCode === 37)
 		{
 				hydrogen.isMoveLeft = false;
