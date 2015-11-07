@@ -1,9 +1,10 @@
 var Sound = (function() {
   this.music = new Audio();
-  this.src = "MusicGameplay.mp3";
+  this.music.src = "./mp3/mozard.mp3";
 
   this.update = (function() {
     this.music.play();
+    this.music.volume = 0.1;
   });
 
 });

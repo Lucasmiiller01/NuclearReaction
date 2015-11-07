@@ -1,11 +1,11 @@
-var Atom = (function(name){
+var Atom = (function(){
 
 	this.x = (graphics.canvas.width / 2);
 	this.y = (graphics.canvas.height / 2);
 
 	this.eletronAngle = 0;
 
-	this.name = name;
+	this.name = "lithium";
 
 	this.r = 10;
 
@@ -35,51 +35,118 @@ var Atom = (function(name){
 		this.move();
 	});
 
-	this.convertToDegree = (function(radians) {
-		return (radians * 180) / Math.PI;
-	});
-
-	this.convertToRadians = (function(degree) {
-		return degree * (Math.PI / 180);
-	});
-
-	this.EletronOrbit = (function(distance, speed, direction) {
-
-			this.eletronAngle += speed;
-
-			graphics.ctx.save();
-      graphics.ctx.translate(this.x, this.y);
-      graphics.ctx.rotate(this.eletronAngle * Math.PI / 180); //90 + largura do quadrado?
-      graphics.drawCicle(distance, distance, 5, "red");
-      graphics.ctx.restore();
-	});
-
-	this.drawProtons = (function(){
+	this.drawAtom = (function(){
 
 		switch (this.name)
 		{
 			case "hydrogen":
-					graphics.drawCicle(this.x, this.y, 10, "blue");
+					// Protons
+					graphics.drawCicle(this.x, this.y, 10, "#CC0000");
+
+					// Eltrons velocity
+					this.eletronAngle += 10;
+
+					// Eletron
+					graphics.ctx.save();
+					graphics.ctx.translate(this.x, this.y);
+					graphics.ctx.rotate(this.eletronAngle * Math.PI / 180); // 90 + widht of quadrate?
+					graphics.drawCicle(30, 30, 5, "#00CC00");
+					graphics.ctx.restore();
+
+					// Fist eletron orbit
+					graphics.drawGirth(this.x,this.y, 42.5, "#5D5D5D");
+
 			break;
 
 			case "helium":
-					graphics.drawCicle(this.x - 10, this.y, this.r, "blue");
-					graphics.drawCicle(this.x + 10, this.y, this.r, "blue");
-					graphics.drawCicle(this.x, this.y - 10, this.r, "Brown");
-					graphics.drawCicle(this.x, this.y + 10, this.r, "Brown");
+
+					// Neutrons
+					graphics.drawCicle(this.x - 10, this.y, this.r, "#CC0000");
+					graphics.drawCicle(this.x + 10, this.y, this.r, "#CC0000");
+					// Protons
+					graphics.drawCicle(this.x, this.y - 10, this.r, "#000099");
+					graphics.drawCicle(this.x, this.y + 10, this.r, "#000099");
+
+					// Eltrons velocity
+					this.eletronAngle += 10;
+
+					// Fist eletron
+					graphics.ctx.save();
+					graphics.ctx.translate(this.x, this.y);
+					graphics.ctx.rotate(this.eletronAngle * Math.PI / 180); // 90 + widht of quadrate?
+					graphics.drawCicle(30, 30, 5, "#00CC00");
+					graphics.ctx.restore();
+
+					// second eletron
+					graphics.ctx.save();
+					graphics.ctx.translate(this.x, this.y);
+					graphics.ctx.rotate(this.eletronAngle * Math.PI / 100); // 90 + widht of quadrate?
+					graphics.drawCicle(40, 40, 5, "#00CC00");
+					graphics.ctx.restore();
+
+					// Fist eletron orbit
+					graphics.drawGirth(this.x,this.y, 42.5, "#5D5D5D");
+					// Second eletron orbit
+					graphics.drawGirth(this.x,this.y, 55, "#5D5D5D");
+
 			break;
 
+			case "lithium":
+
+					// Protons
+					graphics.drawCicle(this.x, this.y - 12.5, this.r, "#000099");
+					graphics.drawCicle(this.x + 10, this.y + 10, this.r, "#000099");
+					graphics.drawCicle(this.x - 10, this.y + 10, this.r, "#000099");
+
+					// Neutrons
+					graphics.drawCicle(this.x - 10, this.y - 8.5, this.r, "#CC0000");
+					graphics.drawCicle(this.x + 10, this.y - 8.5, this.r, "#CC0000");
+					graphics.drawCicle(this.x, this.y + 12.5, this.r, "#CC0000");
+
+					// Proton middle
+					graphics.drawCicle(this.x, this.y, this.r, "#000099");
+
+					// Eltrons velocity
+					this.eletronAngle += 10;
+
+					// Fist eletron
+					graphics.ctx.save();
+					graphics.ctx.translate(this.x, this.y);
+					graphics.ctx.rotate(this.eletronAngle * Math.PI / 180); // 90 + widht of quadrate?
+					graphics.drawCicle(30, 30, 5, "#00CC00");
+					graphics.ctx.restore();
+
+					// second eletron
+					graphics.ctx.save();
+					graphics.ctx.translate(this.x, this.y);
+					graphics.ctx.rotate(this.eletronAngle * Math.PI / 100); // 90 + widht of quadrate?
+					graphics.drawCicle(40, 40, 5, "#00CC00");
+					graphics.ctx.restore();
+
+					// Third eletron
+					graphics.ctx.save();
+					graphics.ctx.translate(this.x, this.y);
+					graphics.ctx.rotate(this.eletronAngle * Math.PI / 50); // 90 + widht of quadrate?
+					graphics.drawCicle(50, 50, 5, "#00CC00");
+					graphics.ctx.restore();
+
+					// Fist eletron orbit
+					graphics.drawGirth(this.x,this.y, 42.5, "#5D5D5D");
+					// Second eletron orbit
+					graphics.drawGirth(this.x,this.y, 55, "#5D5D5D");
+					// Third eletron orbit
+					graphics.drawGirth(this.x,this.y, 70.5, "#5D5D5D");
+
+			break;
 		}
 
-	})
-
-	this.draw = (function(){
-			graphics.clear();
-			this.drawProtons();
-			this.EletronOrbit(25, 1);
-			this.EletronOrbit(35, 200);
 
 	});
 
+	this.draw = (function(){
+			graphics.clear();
+			this.drawAtom();
+	});
+
 });
-var hydrogen = new Atom("helium");
+var hydrogen = new Atom();
