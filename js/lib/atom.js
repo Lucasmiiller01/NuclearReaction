@@ -5,11 +5,11 @@ var Atom = (function(){
 
 	this.eletronAngle = 0;
 
-	this.name = "lithium";
+	this.name = "helium";
 
 	this.r = 10;
 
-	this.speed = 5;
+	this.speed = 10;
 
 	this.isMoveUp = false;
 	this.isMoveDown = false;
@@ -29,6 +29,7 @@ var Atom = (function(){
 
 		if(this.isMoveLeft)
 		{ this.x -= this.speed;}
+
 	});
 
 	this.update = (function(){
@@ -40,6 +41,10 @@ var Atom = (function(){
 		switch (this.name)
 		{
 			case "hydrogen":
+
+					// Fist eletron orbit
+					graphics.drawGirth(this.x,this.y, 42.5, "#5D5D5D");
+
 					// Protons
 					graphics.drawCicle(this.x, this.y, 10, "#CC0000");
 
@@ -53,12 +58,14 @@ var Atom = (function(){
 					graphics.drawCicle(30, 30, 5, "#00CC00");
 					graphics.ctx.restore();
 
-					// Fist eletron orbit
-					graphics.drawGirth(this.x,this.y, 42.5, "#5D5D5D");
-
 			break;
 
 			case "helium":
+
+					// Fist eletron orbit
+					graphics.drawGirth(this.x,this.y, 42.5, "#5D5D5D");
+					// Second eletron orbit
+					graphics.drawGirth(this.x,this.y, 55, "#5D5D5D");
 
 					// Neutrons
 					graphics.drawCicle(this.x - 10, this.y, this.r, "#CC0000");
@@ -84,14 +91,16 @@ var Atom = (function(){
 					graphics.drawCicle(40, 40, 5, "#00CC00");
 					graphics.ctx.restore();
 
+			break;
+
+			case "lithium":
+
 					// Fist eletron orbit
 					graphics.drawGirth(this.x,this.y, 42.5, "#5D5D5D");
 					// Second eletron orbit
 					graphics.drawGirth(this.x,this.y, 55, "#5D5D5D");
-
-			break;
-
-			case "lithium":
+					// Third eletron orbit
+					graphics.drawGirth(this.x,this.y, 70.5, "#5D5D5D");
 
 					// Protons
 					graphics.drawCicle(this.x, this.y - 12.5, this.r, "#000099");
@@ -130,13 +139,6 @@ var Atom = (function(){
 					graphics.drawCicle(50, 50, 5, "#00CC00");
 					graphics.ctx.restore();
 
-					// Fist eletron orbit
-					graphics.drawGirth(this.x,this.y, 42.5, "#5D5D5D");
-					// Second eletron orbit
-					graphics.drawGirth(this.x,this.y, 55, "#5D5D5D");
-					// Third eletron orbit
-					graphics.drawGirth(this.x,this.y, 70.5, "#5D5D5D");
-
 			break;
 		}
 
@@ -149,4 +151,4 @@ var Atom = (function(){
 	});
 
 });
-var hydrogen = new Atom();
+var atom = new Atom();

@@ -1,14 +1,11 @@
 var Manager = (function(){
 
 	this.update = (function(){
-		hydrogen.update();
-		sound.update();
-		neutrinoManager.update();
+		screen.update();
 	});
 
 	this.draw = (function(){
-		hydrogen.draw();
-		neutrinoManager.draw();
+		screen.draw();
 	});
 
 });

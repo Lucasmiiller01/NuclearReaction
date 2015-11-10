@@ -4,7 +4,7 @@ var Sound = (function() {
 
   this.update = (function() {
     this.music.play();
-    this.music.volume = 0.1;
+    this.music.volume = 0;
   });
 
 });

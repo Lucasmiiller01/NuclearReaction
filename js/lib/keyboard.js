@@ -4,44 +4,44 @@ var keyboard = (function()
 
 		if(e.keyCode === 65 || e.keyCode === 37)
 		{
-				hydrogen.isMoveLeft = true;
+				atom.isMoveLeft = true;
 		}
 
 		if(e.keyCode === 39 || e.keyCode === 68)
 		{
-				hydrogen.isMoveRight = true;
+				atom.isMoveRight = true;
 		}
 
 		if(e.keyCode === 38 || e.keyCode === 87)
 		{
-				hydrogen.isMoveDown = true;
+				atom.isMoveDown = true;
 		}
 
 		if(e.keyCode === 40 || e.keyCode === 83)
 		{
-				hydrogen.isMoveUp = true;
+				atom.isMoveUp = true;
 		}
 
 	});
 
 	this.keyup = (function(e){
-		
+
 		if(e.keyCode === 65 || e.keyCode === 37)
 		{
-				hydrogen.isMoveLeft = false;
+				atom.isMoveLeft = false;
 		}
 
 		if(e.keyCode === 39 || e.keyCode === 68)
 		{
-				hydrogen.isMoveRight = false;
+				atom.isMoveRight = false;
 		}
 		if(e.keyCode === 38 || e.keyCode === 87)
 		{
-				hydrogen.isMoveDown = false;
+				atom.isMoveDown = false;
 		}
 		if(e.keyCode === 40 || e.keyCode === 83)
 		{
-				hydrogen.isMoveUp = false;
+				atom.isMoveUp = false;
 		}
 	});
 });
