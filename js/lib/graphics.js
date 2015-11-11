@@ -12,6 +12,19 @@ var Graphics = (function()
 		this.ctx.fillStyle = "black";
 	}
 
+	this.drawText = (function(x, y, text){
+		this.ctx.font = "100px Comic Sans MS";
+		this.ctx.fillText(text,x,y);
+	});
+
+	this.drawLine = (function(x , y , x2, y2){
+			this.ctx.beginPath();
+      this.ctx.moveTo(x, y);
+      this.ctx.lineTo(x2, y2);
+			this.ctx.strokeStyle = "#bbbbbb"
+      this.ctx.stroke();
+	});
+
 	this.drawCicle = (function(x, y, r, color) {
 		graphics.ctx.beginPath();
 		graphics.ctx.arc(x, y, r, 0, 2 * Math.PI, false);
@@ -36,13 +49,6 @@ var Graphics = (function()
 	{
 		this.ctx.strokeStyle = color;
 		this.ctx.strokeRect(x,y,w,h);
-	}
-
-	this.drawText = function(x,y,text,color)
-	{
-		this.ctx.fillStyle = color;
-		this.ctx.font = "40px Computerfont";
-		this.ctx.fillText(text, x, y);
 	}
 
 	this.drawShadowBegin = function(x, y, blur, color)

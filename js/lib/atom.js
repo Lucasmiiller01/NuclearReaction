@@ -62,6 +62,12 @@ var Atom = (function(){
 
 			case "helium":
 
+					// Atom background
+					graphics.ctx.save();
+					graphics.ctx.globalAlpha = 0.65;
+					graphics.drawCicle(this.x, this.y, 54.1, "#eee");
+					graphics.ctx.restore();
+
 					// Fist eletron orbit
 					graphics.drawGirth(this.x,this.y, 42.5, "#5D5D5D");
 					// Second eletron orbit
@@ -95,6 +101,8 @@ var Atom = (function(){
 
 			case "lithium":
 
+					// Atom background
+					graphics.drawCicle(this.x, this.y, 70.4, "#ffffff");
 					// Fist eletron orbit
 					graphics.drawGirth(this.x,this.y, 42.5, "#5D5D5D");
 					// Second eletron orbit
@@ -146,7 +154,6 @@ var Atom = (function(){
 	});
 
 	this.draw = (function(){
-			graphics.clear();
 			this.drawAtom();
 	});
 

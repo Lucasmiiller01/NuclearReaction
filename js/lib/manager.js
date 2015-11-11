@@ -1,11 +1,12 @@
-var Manager = (function(){
+var Manager = (function() {
 
-	this.update = (function(){
-		screen.update();
+	this.update = (function() {
+		scene.update();
 	});
 
-	this.draw = (function(){
-		screen.draw();
+	this.draw = (function() {
+		graphics.clear();
+		scene.draw();
 	});
 
 });

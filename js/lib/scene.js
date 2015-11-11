@@ -1,4 +1,4 @@
-var Screen = (function() {
+var Scene = (function() {
 
 	this.scene = "gameplay"
 
@@ -7,17 +7,19 @@ var Screen = (function() {
 		{
 			atom.update();
 			sound.update();
-			neutrinoRain.update();
+			//neutrinoRain.update();
 		}
 	});
 
 	this.draw = (function() {
 		if(this.scene === "gameplay")
 		{
+			background.draw();
 			atom.draw();
-			neutrinoRain.draw();
+			hud.draw();
+			//neutrinoRain.draw();
 		}
 	});
 
 });
-var screen = new Screen();
+var scene = new Scene();
