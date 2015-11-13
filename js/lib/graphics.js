@@ -12,8 +12,8 @@ var Graphics = (function()
 		this.ctx.fillStyle = "black";
 	}
 
-	this.drawText = (function(x, y, text){
-		this.ctx.font = "100px Comic Sans MS";
+	this.drawText = (function(x, y, fontsize, text){
+		this.ctx.font = fontsize + " Comic Sans MS";
 		this.ctx.fillText(text,x,y);
 	});
 

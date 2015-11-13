@@ -1,13 +1,12 @@
-var Screen = (function() {
-
+var Menu = (function() {
 
 	this.update = (function() {
 
 	});
 
 	this.draw = (function() {
-	
+
 	});
 
 });
-var screen = new Screen();
+var menu = new Menu();

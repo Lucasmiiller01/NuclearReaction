@@ -1,7 +1,22 @@
 var Background = (function(){
 
-  this.update = (function(){
+  this.move = (function(){
 
+    if(keyboard.arrowLeft)
+    { console.log("Left"); }
+
+    if(keyboard.arrowRight)
+    { console.log("Left"); }
+
+    if(keyboard.arrowUp)
+    { console.log("Up"); }
+
+    if(keyboard.arrowDown)
+    { console.log("Down"); }
+  });
+
+  this.update = (function(){
+    this.move();
   });
 
   this.draw = (function() {

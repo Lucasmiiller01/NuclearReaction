@@ -54,7 +54,7 @@ var Atom = (function(){
 					// Eletron
 					graphics.ctx.save();
 					graphics.ctx.translate(this.x, this.y);
-					graphics.ctx.rotate(this.eletronAngle * Math.PI / 180); // 90 + widht of quadrate?
+					graphics.ctx.rotate(this.eletronAngle * Math.PI / 100); // 90 + widht of quadrate?
 					graphics.drawCicle(30, 30, 5, "#00CC00");
 					graphics.ctx.restore();
 
@@ -86,14 +86,14 @@ var Atom = (function(){
 					// Fist eletron
 					graphics.ctx.save();
 					graphics.ctx.translate(this.x, this.y);
-					graphics.ctx.rotate(this.eletronAngle * Math.PI / 180); // 90 + widht of quadrate?
+					graphics.ctx.rotate(this.eletronAngle * Math.PI / 100); // 90 + widht of quadrate?
 					graphics.drawCicle(30, 30, 5, "#00CC00");
 					graphics.ctx.restore();
 
 					// second eletron
 					graphics.ctx.save();
 					graphics.ctx.translate(this.x, this.y);
-					graphics.ctx.rotate(this.eletronAngle * Math.PI / 100); // 90 + widht of quadrate?
+					graphics.ctx.rotate(this.eletronAngle * Math.PI / 180); // 90 + widht of quadrate?
 					graphics.drawCicle(40, 40, 5, "#00CC00");
 					graphics.ctx.restore();
 
@@ -129,7 +129,7 @@ var Atom = (function(){
 					// Fist eletron
 					graphics.ctx.save();
 					graphics.ctx.translate(this.x, this.y);
-					graphics.ctx.rotate(this.eletronAngle * Math.PI / 180); // 90 + widht of quadrate?
+					graphics.ctx.rotate(this.eletronAngle * Math.PI / 50); // 90 + widht of quadrate?
 					graphics.drawCicle(30, 30, 5, "#00CC00");
 					graphics.ctx.restore();
 
@@ -143,7 +143,7 @@ var Atom = (function(){
 					// Third eletron
 					graphics.ctx.save();
 					graphics.ctx.translate(this.x, this.y);
-					graphics.ctx.rotate(this.eletronAngle * Math.PI / 50); // 90 + widht of quadrate?
+					graphics.ctx.rotate(this.eletronAngle * Math.PI / 180); // 90 + widht of quadrate?
 					graphics.drawCicle(50, 50, 5, "#00CC00");
 					graphics.ctx.restore();
 

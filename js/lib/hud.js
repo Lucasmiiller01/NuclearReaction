@@ -1,11 +1,13 @@
 var Hud = (function() {
 
+	this.score = 1;
+
 	this.update = (function() {
 
 	});
 
 	this.draw = (function() {
-			graphics.drawText(30, 100, "text");
+			//graphics.drawText(20, 50, "40px", "Particles: " + this.score);
 	});
 
 });
