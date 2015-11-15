@@ -1,9 +1,11 @@
 var Neutrino = (function(){
+
 		this.x = 0;
 		this.y = 0;
 		this.direction = "";
 		this.speed = 10;
 		this.isAreadyInside = false;
+		
 });
 
 var NeutrinoRain = (function(){
@@ -69,8 +71,6 @@ var NeutrinoRain = (function(){
 
 						if(this.count <= 20)
 						{ this.count += 0.05; }
-
-						console.log(this.neutrinos[0].speed);
 					}
 			}
 		});

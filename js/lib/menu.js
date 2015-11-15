@@ -8,6 +8,7 @@ var Menu = (function() {
 	});
 
 	this.update = (function() {
+		buttons.update();
 		neutrinoRain.update();
 	});
 
