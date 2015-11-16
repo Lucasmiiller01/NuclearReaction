@@ -22,20 +22,6 @@ var Buttons = (function(){
     this.creditsWidth = 230;
     this.creditsHeight = 50;
 
-  this.update = (function(){
-
-    if(mouse.x > this.playX && mouse.y > this.playPivotY && mouse.x < this.playX + this.playWidth && mouse.y < this.playPivotY + this.playHeight)
-    { graphics.drawCicle(this.playX - 20, this.playPivotY + 30,10, "GREEN") }
-
-    if(mouse.x > this.directionX && mouse.y > this.directionPivotY && mouse.x < this.directionX + this.directionWidth && mouse.y < this.directionPivotY + this.creditsHeight)
-    { graphics.drawCicle(this.directionX - 20, this.directionPivotY + 30,10, "GREEN") }
-
-    if(mouse.x > this.creditsX && mouse.y > this.creditsPivotY && mouse.x < this.creditsX + this.creditsWidth && mouse.y < this.creditsPivotY + this.creditsHeight)
-    { graphics.drawCicle(this.creditsX - 20, this.creditsPivotY + 30,10, "GREEN") }
-
-
-  });
-
   this.draw = (function() {
     //graphics.drawStrokeRect(this.playX, this.playPivotY, this.playWidth, this.playHeight, "BLACK");
     //graphics.drawStrokeRect(this.directionX, this.directionPivotY, this.directionWidth, this.directionHeight, "BLACK");
@@ -43,6 +29,15 @@ var Buttons = (function(){
       graphics.drawText(this.playX, this.playY, "70px", "Play", "Green");
       graphics.drawText(this.directionX, this.directionY, "70px", "Instructions", "Green");
       graphics.drawText(this.creditsX, this.creditsY, "70px", "Credits", "Green");
+
+      if(mouse.x > this.playX && mouse.y > this.playPivotY && mouse.x < this.playX + this.playWidth && mouse.y < this.playPivotY + this.playHeight)
+      { graphics.drawCicle(this.playX - 20, this.playPivotY + 30,10, "GREEN") }
+
+      if(mouse.x > this.directionX && mouse.y > this.directionPivotY && mouse.x < this.directionX + this.directionWidth && mouse.y < this.directionPivotY + this.creditsHeight)
+      { graphics.drawCicle(this.directionX - 20, this.directionPivotY + 30,10, "GREEN"); if(mouse.click) { fade.active = true; fade.path = "directions";} }
+
+      if(mouse.x > this.creditsX && mouse.y > this.creditsPivotY && mouse.x < this.creditsX + this.creditsWidth && mouse.y < this.creditsPivotY + this.creditsHeight)
+      { graphics.drawCicle(this.creditsX - 20, this.creditsPivotY + 30,10, "GREEN") }
 
   });
 
