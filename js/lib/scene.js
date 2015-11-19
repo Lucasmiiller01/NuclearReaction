@@ -17,11 +17,6 @@ var Scene = (function() {
 			neutrinoRain.update();
 		}
 
-		if(this.type === "directions")
-		{
-			directions.update();
-		}
-
 	});
 
 	this.draw = (function() {
@@ -38,13 +33,6 @@ var Scene = (function() {
 			atom.draw();
 			hud.draw();
 			neutrinoRain.draw();
-		}
-
-		if(this.type === "directions")
-		{
-			background.draw();
-			directions.draw();
-			hud.draw();
 		}
 
 	});

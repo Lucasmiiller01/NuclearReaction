@@ -23,9 +23,11 @@ var Buttons = (function(){
     this.creditsHeight = 50;
 
   this.draw = (function() {
+
     //graphics.drawStrokeRect(this.playX, this.playPivotY, this.playWidth, this.playHeight, "BLACK");
     //graphics.drawStrokeRect(this.directionX, this.directionPivotY, this.directionWidth, this.directionHeight, "BLACK");
     //graphics.drawStrokeRect(this.creditsX, this.creditsPivotY, this.creditsWidth, this.creditsHeight, "BLACK");
+
       graphics.drawText(this.playX, this.playY, "70px", "Play", "Green");
       graphics.drawText(this.directionX, this.directionY, "70px", "Instructions", "Green");
       graphics.drawText(this.creditsX, this.creditsY, "70px", "Credits", "Green");
