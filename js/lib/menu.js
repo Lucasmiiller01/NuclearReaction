@@ -25,13 +25,49 @@ var Menu = (function() {
 					this.directionsAlpha = 1;
 					fade.active = false;
 				}
-
 		}
-	})
+
+		if(fade.active && fade.path === "menu")
+		{
+			this.directionsAlpha -= 0.05;
+
+			if(this.directionsAlpha <= 0)
+			{
+				this.directionsAlpha = 0;
+				this.menuAlpha += 0.05;
+			}
+
+			if(this.menuAlpha >= 1 && fade.active)
+			{
+				this.menuAlpha = 1;
+				fade.active = false;
+			}
+		}
+
+	});
 
 	this.update = (function() {
+
 		neutrinoRain.update();
+
+		if(this.directionsAlpha >= 1)
+		{ this.updateDirections();}
+
 		this.fadeEnable();
+	});
+
+	this.updateDirections = (function(){
+
+		var x = 600;
+		var y = 500;
+		var w = 120;
+		var h = 50;
+
+		graphics.drawText(x, y + 40, "50px", "Back", "BLUE");
+
+		if(mouse.x > x && mouse.y > y && mouse.x < x + w && mouse.y < y + h)
+		{ graphics.drawCicle(x - 20, y + 25, 7.5, "BLUE"); if(mouse.click) {fade.active = true; fade.path = "menu";} }
+
 	});
 
 	this.drawDirections = (function(){
@@ -65,6 +101,7 @@ var Menu = (function() {
 		graphics.ctx.save();
 		graphics.ctx.globalAlpha = this.directionsAlpha;
 		this.drawDirections();
+		graphics.drawText(600, 540, "50px", "Back", "BLUE");
 		graphics.drawCicle(600,(graphics.canvas.height / 2), 5, "#CC0000");
 		this.drawTexts();
 		graphics.ctx.restore();
