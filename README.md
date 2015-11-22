@@ -6,7 +6,7 @@ A simple game in javascript using HTML5 canvas element.
 (Made in javascript language and Atom text editor | it is likely that works with all browsers, but only tests occurred with google chromer)
 
 # Game Resume
-The user will tap in the atom in order to earn points to evolve the atom (Exemple: Pass hydrogen to helium).
+The user need evade from the neutrinos.
 
 # TODO: 
 	- Add a GUI inteface with sound volume settings)
