@@ -23,6 +23,7 @@ The user need evade from the neutrinos.
 
 # Credits
 - Yago Azedias: https://github.com/yagoazedias/
+- Lucas Miiller: https://github.com/Lucasmiillers2
 - Website: https://yagoazedias.github.io
 - Email: yagoazedias@gmail.com
 - Atom: https://github.com/atom/atom

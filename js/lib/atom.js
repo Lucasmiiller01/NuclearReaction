@@ -41,6 +41,7 @@ var Atom = (function(name, type){
 
 	});
 	
+	
 	this.drawAtom = (function(){
 
 		switch (this.name)
