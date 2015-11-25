@@ -111,17 +111,6 @@ var Menu = (function() {
 	
 	this.updateLevelSelection = (function(){
 
-		var x = 600;
-		var y = 500;
-		var w = 120;
-		var h = 50;
-
-		graphics.drawText(x, y + 40, "50px", "Back", "BLUE");
-
-		if(mouse.x > x && mouse.y > y && mouse.x < x + w && mouse.y < y + h)
-		{ graphics.drawCicle(x - 20, y + 25, 7.5, "BLUE"); if(mouse.click) {fade.active = true; fade.path = "menu";} }
-	
-		
 			if(mouse.x > buttons.easyX && mouse.y > buttons.easyPivotY && mouse.x < buttons.easyX + buttons.easyWidth && mouse.y < buttons.easyPivotY + buttons.easyHeight)
 			  { graphics.drawCicle(buttons.easyX - 20, buttons.easyPivotY + 30,10, "GREEN") 
 				if(mouse.click) { fade.active = true; scene.type = "gameplay";} atom.name = "hydrogen";}
@@ -135,11 +124,7 @@ var Menu = (function() {
 			if(mouse.x > buttons.hardX && mouse.y > buttons.hardPivotY && mouse.x < buttons.hardX + buttons.hardWidth && mouse.y < buttons.hardPivotY + buttons.hardHeight)
 			  { graphics.drawCicle(buttons.hardX - 20, buttons.hardPivotY + 30,10, "GREEN") 
 				if(mouse.click) { fade.active = true; scene.type = "gameplay";}atom.name = "lithium";}
-				
-		
-		
-		
-
+			
 	});
 
 	this.drawDirections = (function(){
