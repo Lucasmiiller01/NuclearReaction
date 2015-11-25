@@ -38,6 +38,8 @@ var Atom = (function(name, type){
 
 		if(this.type === "InGame")
 		{ this.move(); }
+		
+		
 
 	});
 	
